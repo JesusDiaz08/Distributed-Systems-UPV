@@ -1,0 +1,39 @@
+module corba{
+
+  module instantanea{
+
+    struct EstadoRobotD {
+      string nombre;
+      unsigned long id;
+      string IORrob;
+    };
+
+     struct InstantaneaD{
+       sequence<EstadoRobotD> estadorobs;
+    };
+  };
+
+  module robot{
+    interface RobotSeguidorInt{
+       void ObtenerEstado(out corba::instantanea::EstadoRobotD est);
+    };
+
+  };
+
+  module camara{
+
+     struct IPYPortD{
+        string ip;
+        unsigned long port;
+     };
+
+     struct suscripcionD{
+         unsigned long id;
+         IPYPortD iport;
+     };
+
+     interface CamaraInt{
+        suscripcionD SuscribirRobot(in string IORrob);
+     };
+  };
+};
