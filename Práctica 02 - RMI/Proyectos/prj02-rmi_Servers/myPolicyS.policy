@@ -1,0 +1,3 @@
+grant codeBase "file:///C:/sdi/-"{
+ permission java.security.AllPermission;
+};
