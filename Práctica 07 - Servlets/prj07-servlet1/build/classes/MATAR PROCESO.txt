@@ -1,0 +1,5 @@
+Para matar a algún proceso utilizamos la sentencia siguiente.
+
+	netstat -aon | find ":8080" | find "LISTENING"
+
+Después ubicamos el PID del proceso, y lo matamos en el administrador de procesos.
